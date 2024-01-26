@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "670EB25E-C932-474A-A9A3-BD9F40752DE1",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "NetworkServiceTests",
+        "name" : "NetworkServiceTests"
+      }
+    }
+  ],
+  "version" : 1
+}

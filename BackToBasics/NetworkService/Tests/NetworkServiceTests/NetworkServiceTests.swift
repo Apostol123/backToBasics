@@ -14,7 +14,7 @@ final class NetworkServiceTests: XCTestCase {
             exp.fulfill()
         }
         
-        makeSut().get(url: url, completion: {_, _, _ in})
+        sut.get(url: url, completion: {_, _, _ in})
         wait(for: [exp], timeout: 1.0)
     }
     

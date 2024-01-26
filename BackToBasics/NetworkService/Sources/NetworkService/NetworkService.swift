@@ -6,7 +6,7 @@ public protocol NetworkService {
 }
 
 class NetworkServiceImpl: NetworkService {
-    let session: URLSessionadada
+    let session: URLSession
     
     init(session: URLSession) {
         self.session = session
