@@ -38,6 +38,7 @@
 		CBE5A2352B643FFB00CD5C91 /* BackToBasicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackToBasicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE5A2392B643FFB00CD5C91 /* BackToBasicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackToBasicsTests.swift; sourceTree = "<group>"; };
 		CBE5A2522B64407200CD5C91 /* BackToBasics.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BackToBasics.xctestplan; sourceTree = "<group>"; };
+		CBE5A2552B64415100CD5C91 /* NetworkService */ = {isa = PBXFileReference; lastKnownFileType = text; name = NetworkService; path = BackToBasics/NetworkService; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		CBE5A2212B643FF900CD5C91 /* BackToBasics */ = {
 			isa = PBXGroup;
 			children = (
+				CBE5A2532B64413400CD5C91 /* Core */,
 				CBE5A2522B64407200CD5C91 /* BackToBasics.xctestplan */,
 				CBE5A2222B643FF900CD5C91 /* AppDelegate.swift */,
 				CBE5A2242B643FF900CD5C91 /* SceneDelegate.swift */,
@@ -97,6 +99,22 @@
 				CBE5A2392B643FFB00CD5C91 /* BackToBasicsTests.swift */,
 			);
 			path = BackToBasicsTests;
+			sourceTree = "<group>";
+		};
+		CBE5A2532B64413400CD5C91 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CBE5A2542B64413C00CD5C91 /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CBE5A2542B64413C00CD5C91 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CBE5A2552B64415100CD5C91 /* NetworkService */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
