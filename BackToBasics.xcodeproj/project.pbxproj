@@ -14,19 +14,10 @@
 		CBE5A22C2B643FFB00CD5C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE5A22B2B643FFB00CD5C91 /* Assets.xcassets */; };
 		CBE5A22F2B643FFB00CD5C91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE5A22D2B643FFB00CD5C91 /* LaunchScreen.storyboard */; };
 		CBE5A23A2B643FFB00CD5C91 /* BackToBasicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE5A2392B643FFB00CD5C91 /* BackToBasicsTests.swift */; };
-		CBE5A2442B643FFB00CD5C91 /* BackToBasicsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE5A2432B643FFB00CD5C91 /* BackToBasicsUITests.swift */; };
-		CBE5A2462B643FFB00CD5C91 /* BackToBasicsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE5A2452B643FFB00CD5C91 /* BackToBasicsUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		CBE5A2362B643FFB00CD5C91 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBE5A2172B643FF900CD5C91 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CBE5A21E2B643FF900CD5C91;
-			remoteInfo = BackToBasics;
-		};
-		CBE5A2402B643FFB00CD5C91 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CBE5A2172B643FF900CD5C91 /* Project object */;
 			proxyType = 1;
@@ -46,9 +37,7 @@
 		CBE5A2302B643FFB00CD5C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBE5A2352B643FFB00CD5C91 /* BackToBasicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackToBasicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE5A2392B643FFB00CD5C91 /* BackToBasicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackToBasicsTests.swift; sourceTree = "<group>"; };
-		CBE5A23F2B643FFB00CD5C91 /* BackToBasicsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackToBasicsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBE5A2432B643FFB00CD5C91 /* BackToBasicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackToBasicsUITests.swift; sourceTree = "<group>"; };
-		CBE5A2452B643FFB00CD5C91 /* BackToBasicsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackToBasicsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CBE5A2522B64407200CD5C91 /* BackToBasics.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BackToBasics.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +55,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBE5A23C2B643FFB00CD5C91 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,7 +63,6 @@
 			children = (
 				CBE5A2212B643FF900CD5C91 /* BackToBasics */,
 				CBE5A2382B643FFB00CD5C91 /* BackToBasicsTests */,
-				CBE5A2422B643FFB00CD5C91 /* BackToBasicsUITests */,
 				CBE5A2202B643FF900CD5C91 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +72,6 @@
 			children = (
 				CBE5A21F2B643FF900CD5C91 /* BackToBasics.app */,
 				CBE5A2352B643FFB00CD5C91 /* BackToBasicsTests.xctest */,
-				CBE5A23F2B643FFB00CD5C91 /* BackToBasicsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +79,7 @@
 		CBE5A2212B643FF900CD5C91 /* BackToBasics */ = {
 			isa = PBXGroup;
 			children = (
+				CBE5A2522B64407200CD5C91 /* BackToBasics.xctestplan */,
 				CBE5A2222B643FF900CD5C91 /* AppDelegate.swift */,
 				CBE5A2242B643FF900CD5C91 /* SceneDelegate.swift */,
 				CBE5A2262B643FF900CD5C91 /* ViewController.swift */,
@@ -116,15 +97,6 @@
 				CBE5A2392B643FFB00CD5C91 /* BackToBasicsTests.swift */,
 			);
 			path = BackToBasicsTests;
-			sourceTree = "<group>";
-		};
-		CBE5A2422B643FFB00CD5C91 /* BackToBasicsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CBE5A2432B643FFB00CD5C91 /* BackToBasicsUITests.swift */,
-				CBE5A2452B643FFB00CD5C91 /* BackToBasicsUITestsLaunchTests.swift */,
-			);
-			path = BackToBasicsUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,24 +137,6 @@
 			productReference = CBE5A2352B643FFB00CD5C91 /* BackToBasicsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CBE5A23E2B643FFB00CD5C91 /* BackToBasicsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CBE5A24F2B643FFB00CD5C91 /* Build configuration list for PBXNativeTarget "BackToBasicsUITests" */;
-			buildPhases = (
-				CBE5A23B2B643FFB00CD5C91 /* Sources */,
-				CBE5A23C2B643FFB00CD5C91 /* Frameworks */,
-				CBE5A23D2B643FFB00CD5C91 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CBE5A2412B643FFB00CD5C91 /* PBXTargetDependency */,
-			);
-			name = BackToBasicsUITests;
-			productName = BackToBasicsUITests;
-			productReference = CBE5A23F2B643FFB00CD5C91 /* BackToBasicsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +151,6 @@
 						CreatedOnToolsVersion = 15.0;
 					};
 					CBE5A2342B643FFB00CD5C91 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = CBE5A21E2B643FF900CD5C91;
-					};
-					CBE5A23E2B643FFB00CD5C91 = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = CBE5A21E2B643FF900CD5C91;
 					};
@@ -221,7 +171,6 @@
 			targets = (
 				CBE5A21E2B643FF900CD5C91 /* BackToBasics */,
 				CBE5A2342B643FFB00CD5C91 /* BackToBasicsTests */,
-				CBE5A23E2B643FFB00CD5C91 /* BackToBasicsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -238,13 +187,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CBE5A2332B643FFB00CD5C91 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CBE5A23D2B643FFB00CD5C91 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,15 +214,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBE5A23B2B643FFB00CD5C91 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CBE5A2442B643FFB00CD5C91 /* BackToBasicsUITests.swift in Sources */,
-				CBE5A2462B643FFB00CD5C91 /* BackToBasicsUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -288,11 +221,6 @@
 			isa = PBXTargetDependency;
 			target = CBE5A21E2B643FF900CD5C91 /* BackToBasics */;
 			targetProxy = CBE5A2362B643FFB00CD5C91 /* PBXContainerItemProxy */;
-		};
-		CBE5A2412B643FFB00CD5C91 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CBE5A21E2B643FF900CD5C91 /* BackToBasics */;
-			targetProxy = CBE5A2402B643FFB00CD5C91 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -450,6 +378,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,6 +407,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -531,42 +461,6 @@
 			};
 			name = Release;
 		};
-		CBE5A2502B643FFB00CD5C91 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8DURMPUBZ2;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alex.apostol.BackToBasicsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BackToBasics;
-			};
-			name = Debug;
-		};
-		CBE5A2512B643FFB00CD5C91 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8DURMPUBZ2;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alex.apostol.BackToBasicsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BackToBasics;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -593,15 +487,6 @@
 			buildConfigurations = (
 				CBE5A24D2B643FFB00CD5C91 /* Debug */,
 				CBE5A24E2B643FFB00CD5C91 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CBE5A24F2B643FFB00CD5C91 /* Build configuration list for PBXNativeTarget "BackToBasicsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CBE5A2502B643FFB00CD5C91 /* Debug */,
-				CBE5A2512B643FFB00CD5C91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

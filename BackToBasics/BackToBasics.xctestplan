@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "F925490C-43CE-4D9D-BFE1-41AB7F7BD715",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:BackToBasics.xcodeproj",
+      "identifier" : "CBE5A21E2B643FF900CD5C91",
+      "name" : "BackToBasics"
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:BackToBasics.xcodeproj",
+        "identifier" : "CBE5A2342B643FFB00CD5C91",
+        "name" : "BackToBasicsTests"
+      }
+    }
+  ],
+  "version" : 1
+}
