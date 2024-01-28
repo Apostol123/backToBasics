@@ -2,17 +2,17 @@
 
 import Foundation
 public protocol NetworkService {
-    func get(url: URL, completion: @escaping(Result<Data, Error>, URLResponse?) -> Void)
+    func execute(url: URL, completion: @escaping(Result<Data, Error>, URLResponse?) -> Void)
 }
 
-class NetworkServiceImpl: NetworkService {
+public final class NetworkServiceImpl: NetworkService {
     let session: URLSession
     
-    init(session: URLSession) {
+    public init(session: URLSession) {
         self.session = session
     }
     
-    func get(url: URL, completion: @escaping(Result<Data, Error>, URLResponse?) -> Void) {
+    public func execute(url: URL, completion: @escaping(Result<Data, Error>, URLResponse?) -> Void) {
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
             if let error = error {
                 completion(.failure(error), response)

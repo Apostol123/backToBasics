@@ -14,7 +14,7 @@ final class NetworkServiceTests: XCTestCase {
             exp.fulfill()
         }
         
-        sut.get(url: url, completion: {_, _ in})
+        sut.execute(url: url, completion: {_, _ in})
         wait(for: [exp], timeout: 1.0)
     }
     
@@ -26,7 +26,7 @@ final class NetworkServiceTests: XCTestCase {
         URLProtocolStub.stub(data: nil, response: nil, error: givenError)
         let exp = expectation(description: "wait for request")
         
-        sut.get(url: url, completion: {result, _ in
+        sut.execute(url: url, completion: {result, _ in
             switch result {
             case .success(let success):
                 XCTFail("expected \(givenError) but con \(success) instead")
