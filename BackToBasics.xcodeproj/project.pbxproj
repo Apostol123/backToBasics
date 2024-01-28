@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB61FE402B66D241004E2A77 /* NetworkServiceAbstractionLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkServiceAbstractionLayer; sourceTree = "<group>"; };
 		CBE5A21F2B643FF900CD5C91 /* BackToBasics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackToBasics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE5A2222B643FF900CD5C91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE5A2242B643FF900CD5C91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		CBE5A2542B64413C00CD5C91 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CB61FE402B66D241004E2A77 /* NetworkServiceAbstractionLayer */,
 				CBE5A2552B64415100CD5C91 /* NetworkService */,
 			);
 			path = Network;

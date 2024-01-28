@@ -41,8 +41,6 @@ final class NetworkServiceTests: XCTestCase {
     
     //MARK: Helpers
     
-    
-    
     private func makeSut() -> NetworkService {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [URLProtocolStub.self]

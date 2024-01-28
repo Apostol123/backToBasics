@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "1023C0E4-6332-4022-ACA3-8FAA45EE628D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "NetworkServiceAbstractionLayerTests",
+        "name" : "NetworkServiceAbstractionLayerTests"
+      }
+    }
+  ],
+  "version" : 1
+}
