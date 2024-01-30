@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "C235E343-8098-4197-B508-53A977D79ECA",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "UIKitDesingTests",
+        "name" : "UIKitDesingTests"
+      }
+    }
+  ],
+  "version" : 1
+}
