@@ -2,17 +2,23 @@ import XCTest
 @testable import UIKitDesing
 
 final class UIKitDesingTests: XCTestCase {
-    func test_sut_on_viewLoad_loads_cells() throws {
+    func test_sut_on_viewLoad_loads_models() throws {
         //given
-        let sut = makeSut()
+        let models = makeModels()
+        let sut = makeSut(with: models)
+       
         //When
         sut.viewDidLoad()
         //Then
-        XCTAssertEqual(sut.numberOfRenderedCells, 1)
+        XCTAssertEqual(sut.numberOfRenderedCells, models.count)
     }
     
-    private func makeSut() -> UIKitDesingImpl {
-        return UIKitDesingImpl(nibName: nil, bundle: nil)
+    private func makeSut(with models: [UIKitDesingImplDataModel] = []) -> UIKitDesingImpl {
+        return UIKitDesingImpl(models: models)
+    }
+    
+    private func makeModels() -> [UIKitDesingImplDataModel] {
+        [UIKitDesingImplDataModel(), UIKitDesingImplDataModel()]
     }
 }
 

@@ -3,10 +3,20 @@
 import UIKit
 
 public final class UIKitDesingImpl: UITableViewController {
+    private lazy var models: [UIKitDesingImplDataModel] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+    }
+    
+    convenience init(models: [UIKitDesingImplDataModel]) {
+        self.init(nibName: nil, bundle: nil)
+        self.models = models
     }
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -22,7 +32,7 @@ public final class UIKitDesingImpl: UITableViewController {
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        models.count
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
