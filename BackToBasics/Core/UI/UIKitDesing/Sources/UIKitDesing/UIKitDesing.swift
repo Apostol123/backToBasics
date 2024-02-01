@@ -17,6 +17,7 @@ public final class UIKitDesingImpl: UITableViewController {
     convenience init(models: [UIKitDesingImplDataModel]) {
         self.init(nibName: nil, bundle: nil)
         self.models = models
+        tableView.register(UIKitDesingCell.self, forCellReuseIdentifier: UIKitDesingCell.reuseIdentifier)
     }
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -36,8 +37,16 @@ public final class UIKitDesingImpl: UITableViewController {
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.contentView.backgroundColor = .red
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UIKitDesingCell.reuseIdentifier, for: indexPath) as? UIKitDesingCell else {
+            return UITableViewCell()
+        }
+        setup(cell: cell, with: models[indexPath.row])
         return cell
+    }
+    
+    private func setup(cell: UIKitDesingCell, with model: UIKitDesingImplDataModel) {
+        cell.nameLabel.text = model.name
+        cell.surnameLabel.text = model.surname
+        cell.userImage = model.image
     }
 }

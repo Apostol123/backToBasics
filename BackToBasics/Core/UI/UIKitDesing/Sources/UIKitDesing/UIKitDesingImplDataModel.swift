@@ -6,6 +6,10 @@
 //
 
 import Foundation
+import UIKit
+
 public struct UIKitDesingImplDataModel {
-    
+    public let name: String
+    public let surname: String
+    public let image: UIImageView
 }
