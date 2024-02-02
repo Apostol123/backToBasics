@@ -4,7 +4,7 @@ import XCTest
 final class UIKitDesingTests: XCTestCase {
     func test_sut_on_viewLoad_loads_models() throws {
         //given
-        let models = makeModels()
+        let models = UIKitDesingTests.makeModels()
         let sut = makeSut(with: models)
        
         //When
@@ -15,7 +15,7 @@ final class UIKitDesingTests: XCTestCase {
     
     func test_sut_given_ViewModels_cellRendersViewModelData() {
         //Given
-        let models = makeModels()
+        let models = UIKitDesingTests.makeModels()
         let sut = makeSut(with: models)
         //When
         sut.viewDidLoad()
@@ -28,21 +28,6 @@ final class UIKitDesingTests: XCTestCase {
     
     private func makeSut(with models: [UIKitDesingImplDataModel] = []) -> UIKitDesingImpl {
         return UIKitDesingImpl(models: models)
-    }
-    
-    private func makeModels() -> [UIKitDesingImplDataModel] {
-        [
-            UIKitDesingImplDataModel(
-                name: "a name",
-                surname: "a surname",
-                image: UIImageView()
-            ),
-            UIKitDesingImplDataModel(
-                name: "another name",
-                surname: "another surname",
-                image: UIImageView()
-            )
-        ]
     }
 }
 
