@@ -1,7 +1,11 @@
 import Foundation
 import NetworkService
 
-public final class NetworkServiceAbstractionLayer {
+public protocol NetworkServiceAbstractionLayerProtocol {
+    func execute<T: Decodable>(request: URLRequest, type: T.Type, completion: @escaping (Result<T, Error>) -> Void)
+}
+
+public final class NetworkServiceAbstractionLayer: NetworkServiceAbstractionLayerProtocol {
     private let service: NetworkServiceImpl
     
     public init(session: URLSession) {
