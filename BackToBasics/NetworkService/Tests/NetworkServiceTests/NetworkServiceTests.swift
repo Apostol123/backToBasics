@@ -1,4 +1,5 @@
 import XCTest
+import Stubs
 @testable import NetworkService
 
 final class NetworkServiceTests: XCTestCase {

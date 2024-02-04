@@ -6,7 +6,9 @@
 //
 
 import XCTest
+import URLRequestFactory
 @testable import UIKitDesing
+import NetworkServiceAbstractionLayer
 
 public protocol UIKitDesignViewModelProtocol {
     func getData(completion: @escaping (Result<[UIKitDesingImplDataModel], Error>) -> Void)
@@ -29,7 +31,7 @@ final class UIKitDesignViewModellTests: XCTestCase {
     }
     
     private func completeGetData(with giveResult:  Result<[UIKitDesingImplDataModel],Error>) {
-        let sut = UIKitDesignViewModel()
+        let sut = UIKitDesignViewModel(service: <#NetworkServiceAbstractionLayerProtocol#>)
         let exp = expectation(description: "Wait for load completion")
         sut.getData { result in
             switch (giveResult, result) {
@@ -49,8 +51,40 @@ final class UIKitDesignViewModellTests: XCTestCase {
     }
     
     private class UIKitDesignViewModel: UIKitDesignViewModelProtocol {
+        private let service: NetworkServiceAbstractionLayerProtocol
+        
+        init(service: NetworkServiceAbstractionLayerProtocol) {
+            self.service = service
+        }
+        
         func getData(completion: @escaping (Result<[UIKitDesingImplDataModel], Error>) -> Void) {
-            return completion(.success(makeModels()))
+            service.execute(request: GetUserEndpoints.get.urlRequest(), type: Users.self) { result in
+                switch result {
+                case .success(let success):
+                    completion(.success([]))
+                case .failure(let failure):
+                    completion(.failure(failure))
+                }
+            }
+        }
+    }
+    
+    
+    enum GetUserEndpoints {
+        case get
+        
+        func urlRequest() -> URLRequest {
+            switch self {
+            case .get:
+                let urlRequest = URLRequestFactory().makeRequest(
+                    with: URLRequestFactory.URLRequestFactoryComponenet(
+                        scheme: "https",
+                        host: "dummyjson.com",
+                        path: "/users"
+                    )
+                )
+                return urlRequest
+            }
         }
     }
     

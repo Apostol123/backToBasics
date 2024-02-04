@@ -1,4 +1,5 @@
 import XCTest
+import Stubs
 @testable import NetworkServiceAbstractionLayer
 
 final class NetworkServiceAbstractionLayerTests: XCTestCase {

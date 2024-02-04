@@ -11,7 +11,8 @@ let package = Package(
             name: "NetworkServiceAbstractionLayer",
             targets: ["NetworkServiceAbstractionLayer"]),
     ],
-    dependencies: [.package(name: "NetworkService", path: "NetworkService")],
+    dependencies: [.package(name: "NetworkService", path: "NetworkService"),
+                   .package(name: "Stubs", path: "Stubs")],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
@@ -20,6 +21,6 @@ let package = Package(
         dependencies: ["NetworkService"]),
         .testTarget(
             name: "NetworkServiceAbstractionLayerTests",
-            dependencies: ["NetworkServiceAbstractionLayer"]),
+            dependencies: ["NetworkServiceAbstractionLayer", "Stubs"]),
     ]
 )
