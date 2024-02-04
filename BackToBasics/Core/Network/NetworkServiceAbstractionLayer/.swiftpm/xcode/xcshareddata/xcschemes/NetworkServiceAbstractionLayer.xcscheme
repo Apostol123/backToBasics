@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:NetworkServiceAbstractionLayer.xctestplan"
+            reference = "container:Sources/NetworkServiceAbstractionLayer.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
