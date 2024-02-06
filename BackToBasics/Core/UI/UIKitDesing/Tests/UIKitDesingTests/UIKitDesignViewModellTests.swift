@@ -11,55 +11,6 @@ import URLRequestFactory
 import NetworkServiceAbstractionLayer
 import Stubs
 
-public enum GetUserEndpoints {
-    case get
-    
-    func urlRequest() -> URLRequest {
-        switch self {
-        case .get:
-            let urlRequest = URLRequestFactory().makeRequest(
-                with: URLRequestFactory.URLRequestFactoryComponenet(
-                    scheme: "https",
-                    host: "dummyjson.com",
-                    path: "/users"
-                )
-            )
-            return urlRequest
-        }
-    }
-}
-
-public protocol UIKitDesignViewModelProtocol {
-    func getData(completion: @escaping (Result<[UIKitDesingImplDataModel], Error>) -> Void)
-}
-
-public final class UIKitDesignViewModel: UIKitDesignViewModelProtocol {
-    private let service: NetworkServiceAbstractionLayerProtocol
-    
-    init(service: NetworkServiceAbstractionLayerProtocol) {
-        self.service = service
-    }
-    
-    public func getData(completion: @escaping (Result<[UIKitDesingImplDataModel], Error>) -> Void) {
-        service.execute(request: GetUserEndpoints.get.urlRequest(), type: Users.self) { result in
-            switch result {
-            case .success(let success):
-                completion(.success(UIKitDesignViewModel.map(success)))
-            case .failure(let failure):
-                completion(.failure(failure))
-            }
-        }
-    }
-    
-    // Mapper
-    static func map(_ users: Users) -> [UIKitDesingImplDataModel] {
-       return users.users.map { user in
-           UIKitDesingImplDataModel(name: user.maidenName, surname: user.firstName, imageURL: user.image)
-       }.compactMap({$0})
-       
-    }
-}
-
 final class UIKitDesignViewModellTests: XCTestCase {
     
     func test_viewModel_onGetDataRequest_withSucces_Expecte_sucessReturn() throws {
