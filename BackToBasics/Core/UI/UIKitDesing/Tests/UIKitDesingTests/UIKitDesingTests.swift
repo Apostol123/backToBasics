@@ -23,7 +23,6 @@ final class UIKitDesingTests: XCTestCase {
         //Then
         XCTAssertEqual(cell?.nameLabel.text, models[0].name)
         XCTAssertEqual(cell?.surnameLabel.text, models[0].surname)
-        XCTAssertEqual(cell?.userImage, models[0].image)
     }
     
     private func makeSut(with models: [UIKitDesingImplDataModel] = []) -> UIKitDesingImpl {

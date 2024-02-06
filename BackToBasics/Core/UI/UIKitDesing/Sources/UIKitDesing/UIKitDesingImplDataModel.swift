@@ -11,12 +11,5 @@ import UIKit
 public struct UIKitDesingImplDataModel: Equatable {
     public let name: String
     public let surname: String
-    public let image: UIImageView
-    
-    public static func == (lhs: UIKitDesingImplDataModel, rhs: UIKitDesingImplDataModel) -> Bool {
-        return lhs.name == rhs.name &&
-        lhs.surname == rhs.surname &&
-        lhs.image.image?.pngData() == rhs.image.image?.pngData()
-    }
-    
+    public let imageURL: String
 }

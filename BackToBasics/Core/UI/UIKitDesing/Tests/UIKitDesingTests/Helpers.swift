@@ -15,12 +15,12 @@ extension XCTestCase {
             UIKitDesingImplDataModel(
                 name: "a name",
                 surname: "a surname",
-                image: UIImageView()
+                imageURL: "www.anyImage.com"
             ),
             UIKitDesingImplDataModel(
                 name: "another name",
                 surname: "another surname",
-                image: UIImageView()
+                imageURL: "www.anyImage.com"
             )
         ]
     }

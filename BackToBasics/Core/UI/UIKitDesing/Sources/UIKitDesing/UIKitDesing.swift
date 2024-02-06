@@ -47,6 +47,6 @@ public final class UIKitDesingImpl: UITableViewController {
     private func setup(cell: UIKitDesingCell, with model: UIKitDesingImplDataModel) {
         cell.nameLabel.text = model.name
         cell.surnameLabel.text = model.surname
-        cell.userImage = model.image
+        cell.userImage = UIImageView(image: nil)
     }
 }
