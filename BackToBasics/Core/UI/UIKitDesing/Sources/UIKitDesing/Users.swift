@@ -36,7 +36,8 @@ struct User: Codable {
 
 // MARK: - Address
 struct Address: Codable {
-    let address, city: String
+    let address: String
+    let city: String?
     let coordinates: Coordinates
     let postalCode, state: String
 }

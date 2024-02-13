@@ -7,6 +7,7 @@
 
 import UIKit
 import UIKitDesing
+import NetworkServiceAbstractionLayer
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,7 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let navController = UINavigationController(rootViewController: UIKitDesingImpl(nibName: nil, bundle: nil))
+        let urlSessionConfiguration = URLSessionConfiguration.ephemeral
+        let urlSession = URLSession(configuration: urlSessionConfiguration)
+        let networkService = NetworkServiceAbstractionLayer(session: urlSession)
+        let viewModel = UIKitDesignViewModel(service: networkService)
+        let navController = UINavigationController(rootViewController: UIKitDesingImpl(model: viewModel))
         window.rootViewController = navController
         window.makeKeyAndVisible()
         self.window = window

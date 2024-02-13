@@ -25,6 +25,18 @@ final class UIKitDesingTests: XCTestCase {
         XCTAssertEqual(cell?.surnameLabel.text, models[0].surname)
     }
     
+    func test_sut_given_ViewModels_whenCellNearVisibile_willStartLoadingImage() {
+        //Given
+        let models = UIKitDesingTests.makeModels()
+        let sut = makeSut(with: models)
+        //When
+        sut.viewDidLoad()
+        let cell = sut.cellAtRow(row: 0)
+        //Then
+        XCTAssertEqual(cell?.nameLabel.text, models[0].name)
+        XCTAssertEqual(cell?.surnameLabel.text, models[0].surname)
+    }
+    
     private func makeSut(with models: [UIKitDesingImplDataModel] = []) -> UIKitDesingImpl {
         return UIKitDesingImpl(models: models)
     }
@@ -40,5 +52,11 @@ private extension UIKitDesingImpl {
         let indexPath = IndexPath(row: row, section: 1)
         let cell = tableView(tableView, cellForRowAt: indexPath) as? UIKitDesingCell
         return cell
+    }
+    
+    func cellNearVisibleAtRow(row: Int) -> UIKitDesingCell? {
+        let ds = tableView.dataSource
+        let index = IndexPath(row: row, section: 1)
+        return ds?.tableView(tableView, cellForRowAt: index) as? UIKitDesingCell
     }
 }

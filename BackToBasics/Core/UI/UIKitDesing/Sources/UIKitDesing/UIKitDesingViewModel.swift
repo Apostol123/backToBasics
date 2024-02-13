@@ -10,12 +10,13 @@ import NetworkServiceAbstractionLayer
 
 public protocol UIKitDesignViewModelProtocol {
     func getData(completion: @escaping (Result<[UIKitDesingImplDataModel], Error>) -> Void)
+    func loadImage(for url: String, completion: @escaping (Result<Data, Error>) -> Void)
 }
 
 public final class UIKitDesignViewModel: UIKitDesignViewModelProtocol {
     private let service: NetworkServiceAbstractionLayerProtocol
     
-    init(service: NetworkServiceAbstractionLayerProtocol) {
+    public init(service: NetworkServiceAbstractionLayerProtocol) {
         self.service = service
     }
     
@@ -24,6 +25,19 @@ public final class UIKitDesignViewModel: UIKitDesignViewModelProtocol {
             switch result {
             case .success(let success):
                 completion(.success(UIKitDesignViewModel.map(success)))
+            case .failure(let failure):
+                completion(.failure(failure))
+            }
+        }
+    }
+    
+    public func loadImage(for url: String, completion: @escaping (Result<Data, Error>) -> Void) {
+        guard let url = URL(string: url) else { return }
+        let urlRequest = URLRequest(url: url)
+        service.execute(request: urlRequest, type: Data.self) { result in
+            switch result {
+            case .success(let success):
+                completion(.success(success))
             case .failure(let failure):
                 completion(.failure(failure))
             }

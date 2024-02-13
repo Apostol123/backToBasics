@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NetworkServiceAbstractionLayer
 import UIKitDesing
 
 @main
@@ -16,8 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let navController = UINavigationController(rootViewController: ViewController())
-        window?.rootViewController = ViewController()
+        let urlSessionConfiguration = URLSessionConfiguration.ephemeral
+        let urlSession = URLSession(configuration: urlSessionConfiguration)
+        let networkService = NetworkServiceAbstractionLayer(session: urlSession)
+        let viewModel = UIKitDesignViewModel(service: networkService)
+        let navController = UINavigationController(rootViewController: UIKitDesingImpl(model: viewModel))
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
         return true
     }
