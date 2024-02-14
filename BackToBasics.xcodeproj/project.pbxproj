@@ -27,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		CB61FE402B66D241004E2A77 /* NetworkServiceAbstractionLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkServiceAbstractionLayer; sourceTree = "<group>"; };
+		CBC504042B7C0BC900478E13 /* SwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftUI; sourceTree = "<group>"; };
 		CBE03B8C2B6994FB00EEF393 /* UIKitDesing */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIKitDesing; sourceTree = "<group>"; };
 		CBE03B962B6E240700EEF393 /* URLRequestFactory */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = URLRequestFactory; sourceTree = "<group>"; };
 		CBE03B982B7016DA00EEF393 /* Stubs */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Stubs; sourceTree = "<group>"; };
@@ -64,6 +65,7 @@
 		CBE03B8B2B6994B000EEF393 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CBC504042B7C0BC900478E13 /* SwiftUI */,
 				CBE03B8C2B6994FB00EEF393 /* UIKitDesing */,
 			);
 			path = UI;
