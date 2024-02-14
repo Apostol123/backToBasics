@@ -11,11 +11,16 @@ let package = Package(
             name: "SwiftUI",
             targets: ["SwiftUI"]),
     ],
+    dependencies: [.package(name: "NetworkServiceAbstractionLayer", path: "/Network/NetworkServiceAbstractionLayer"),
+                   .package(name: "URLRequestFactory", path: "/Network/URLRequestFactory"),
+                   .package(name: "Stubs", path: "/Network/Stubs")],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "SwiftUI"),
+            name: "SwiftUI",
+            dependencies: ["NetworkServiceAbstractionLayer", "URLRequestFactory"]),
+        
         .testTarget(
             name: "SwiftUITests",
             dependencies: ["SwiftUI"]),
