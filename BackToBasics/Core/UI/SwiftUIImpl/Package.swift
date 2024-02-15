@@ -4,12 +4,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftUI",
+    name: "SwiftUIImpl",
+    platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "SwiftUI",
-            targets: ["SwiftUI"]),
+            name: "SwiftUIImpl",
+            targets: ["SwiftUIImpl"]),
     ],
     dependencies: [.package(name: "NetworkServiceAbstractionLayer", path: "/Network/NetworkServiceAbstractionLayer"),
                    .package(name: "URLRequestFactory", path: "/Network/URLRequestFactory"),
@@ -18,11 +19,11 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "SwiftUI",
+            name: "SwiftUIImpl",
             dependencies: ["NetworkServiceAbstractionLayer", "URLRequestFactory"]),
         
         .testTarget(
-            name: "SwiftUITests",
-            dependencies: ["SwiftUI"]),
+            name: "SwiftUIImplTests",
+            dependencies: ["SwiftUIImpl"]),
     ]
 )

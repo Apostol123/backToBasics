@@ -8,7 +8,7 @@
 import Foundation
 import NetworkServiceAbstractionLayer
 
-struct SwiftUIViewModel {
+public struct SwiftUIViewModel {
     private let service: NetworkServiceAbstractionLayerProtocol
     
     public init(service: NetworkServiceAbstractionLayerProtocol) {

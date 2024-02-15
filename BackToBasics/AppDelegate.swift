@@ -8,6 +8,8 @@
 import UIKit
 import NetworkServiceAbstractionLayer
 import UIKitDesing
+import SwiftUIImpl
+import SwiftUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+       
+        return true
+    }
+    
+    private func launchUIKIT() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let urlSessionConfiguration = URLSessionConfiguration.ephemeral
         let urlSession = URLSession(configuration: urlSessionConfiguration)
@@ -24,7 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navController = UINavigationController(rootViewController: UIKitDesingImpl(model: viewModel))
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
-        return true
+    }
+    
+    private func launchSwiftUI() {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let urlSessionConfiguration = URLSessionConfiguration.ephemeral
+        let urlSession = URLSession(configuration: urlSessionConfiguration)
+        let networkService = NetworkServiceAbstractionLayer(session: urlSession)
+        let viewModel = SwiftUIViewModel(service: networkService)
+        let navController = UIHostingController(rootView: SwifUITableView(model: viewModel))
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
     }
 
     // MARK: UISceneSession Lifecycle

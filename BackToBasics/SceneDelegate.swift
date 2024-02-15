@@ -8,6 +8,8 @@
 import UIKit
 import UIKitDesing
 import NetworkServiceAbstractionLayer
+import SwiftUIImpl
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,6 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        launchSwiftUI(scene: scene)
+        
+    }
+    
+    private func launchUIKIT(scene: UIScene) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let urlSessionConfiguration = URLSessionConfiguration.ephemeral
@@ -26,7 +33,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = navController
         window.makeKeyAndVisible()
         self.window = window
-        
+    }
+    
+    private func launchSwiftUI(scene: UIScene) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        let urlSessionConfiguration = URLSessionConfiguration.ephemeral
+        let urlSession = URLSession(configuration: urlSessionConfiguration)
+        let networkService = NetworkServiceAbstractionLayer(session: urlSession)
+        let viewModel = SwiftUIViewModel(service: networkService)
+        let navController = UIHostingController(rootView: SwifUITableView(model: viewModel))
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

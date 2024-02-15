@@ -7,7 +7,8 @@
 
 import Foundation
 
-public struct SwiftUIImplDataModel: Equatable {
+public struct SwiftUIImplDataModel: Equatable, Identifiable {
+    public var id = UUID()
     public let name: String
     public let surname: String
     public let imageURL: String
