@@ -1,37 +1,34 @@
-//
-//  SwiftUIView.swift
-//  
-//
-//  Created by Alex.personal on 13/2/24.
-//
-
 import SwiftUI
+import Combine
 
 public struct SwifUITableView: View {
-    private let viewModel: SwiftUIViewModel
-    
+    @ObservedObject private var viewModel: SwiftUIViewModel
+
     public init(model: SwiftUIViewModel) {
         self.viewModel = model
     }
-    
-    @State var listItems: [SwiftUIImplDataModel] = []
+
     public var body: some View {
-        
-        List(listItems) { item in
-            Text(item.name)
-            Text(item.surname)
-           
-        }.onAppear {
-            viewModel.getData { result in
-                switch result {
-                case .success(let success):
-                    self.listItems = success
-                case .failure(let failure):
-                    break
-                }
-            }
+        List(viewModel.listItems) { item in
+            TableViewCell(item: item)
         }
-       
+        .onAppear { 
+            viewModel.viewDidAppear()
+        }
     }
 }
 
+struct TableViewCell: View {
+    let item: SwiftUIImplDataModel
+    
+    init(item: SwiftUIImplDataModel) {
+        self.item = item
+    }
+    
+    public var body: some View {
+        VStack(alignment: .leading) {
+            Text(item.name)
+            Text(item.surname)
+        }
+    }
+}

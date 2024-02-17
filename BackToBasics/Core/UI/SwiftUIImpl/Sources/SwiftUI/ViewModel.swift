@@ -7,12 +7,40 @@
 
 import Foundation
 import NetworkServiceAbstractionLayer
+import Combine
 
-public struct SwiftUIViewModel {
+
+
+public class SwiftUIViewModel: ObservableObject {
     private let service: NetworkServiceAbstractionLayerProtocol
+    private var cancellable: AnyCancellable?
+    @Published private(set) var listItems: [SwiftUIImplDataModel] = []
     
     public init(service: NetworkServiceAbstractionLayerProtocol) {
         self.service = service
+    }
+    
+    func getDataCombine() -> AnyPublisher<[SwiftUIImplDataModel], Error>{
+        let subject = PassthroughSubject<[SwiftUIImplDataModel], Error>()
+        service.execute(request: GetUserEndpoints.get.urlRequest(), type: Users.self) { result in
+            switch result {
+            case .success(let success):
+                subject.send(SwiftUIViewModel.map(success))
+                subject.send(completion: .finished)
+            case .failure(let failure):
+                subject.send(completion: .failure(failure))
+            }
+        }
+        
+        return subject.eraseToAnyPublisher()
+    }
+    
+    func viewDidAppear() {
+        cancellable = getDataCombine().receive(on: DispatchQueue.main).sink(receiveCompletion: { _ in
+            
+        }, receiveValue: { models in
+            self.listItems = models
+        })
     }
     
     public func getData(completion: @escaping (Result<[SwiftUIImplDataModel], Error>) -> Void) {
